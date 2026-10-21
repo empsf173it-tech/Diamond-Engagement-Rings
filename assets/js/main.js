@@ -37,4 +37,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
     }
+
+    // Back to Top Button
+    let backToTopBtn = document.getElementById('back-to-top');
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'back-to-top';
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        backToTopBtn.setAttribute('type', 'button');
+        backToTopBtn.innerHTML = '<i class="bi bi-chevron-up"></i>';
+        document.body.appendChild(backToTopBtn);
+    }
+
+    const handleScroll = () => {
+        if (window.scrollY > 250) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });
