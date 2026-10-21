@@ -1006,3 +1006,75 @@ body.auth-page {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(197, 160, 89, 0.25);
 }
+
+/* --- Contact Icon Badge & Atelier Info Layout --- */
+.contact-icon-badge {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    border-radius: 50%;
+    background: rgba(197, 160, 89, 0.14);
+    color: var(--accent-gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.atelier-contact-item:hover .contact-icon-badge {
+    background: var(--accent-gold);
+    color: #FFFFFF;
+    transform: scale(1.08);
+}
+
+.atelier-icons-wrapper {
+    width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .atelier-icons-wrapper {
+        max-width: 100%;
+    }
+    .atelier-contact-item {
+        gap: 0.85rem !important;
+    }
+    .contact-icon-badge {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .atelier-experience-header {
+        text-align: center;
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .atelier-icons-wrapper {
+        max-width: 460px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .atelier-extra-cards {
+        max-width: 460px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* --- Fix Appointment Form Blank Space --- */
+.appointment-card {
+    height: auto !important;
+}
+
+.appointment-card > *:last-child,
+.appointment-card #appointment-form,
+.premium-card > #appointment-form {
+    margin-top: 0 !important;
+}
